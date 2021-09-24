@@ -8,8 +8,8 @@ $password = "";
 $connect = mysqli_connect($hostname, $username, $password, $database);
 
 // script cek koneksi   
-if ($conn->connect_error){
-    echo json_encode("Connection failed: " . $conn->connect_error);
+if (!$connect) {
+    die("Koneksi Tidak Berhasil: " . mysqli_connect_error());
 }
 
 ?>
